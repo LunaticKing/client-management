@@ -8,12 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-<h1>Tem certeza que deseja deletar {{client.name}} {{client.surname}}?</h1>
-    <form method="POST" enctype="multipart/form-data">
-        {%csrf_token%}
-        <button type="submit">Delete</button>
-    </form>
-    <a href="{% url 'people_list' %}"><button>Não</button></a>
-    <br>
+
 </body>
 </html>
