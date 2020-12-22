@@ -6,5 +6,5 @@ def home(request):
 
 def system_logout(request):
     logout(request)
-    return redirect("home.html")
+    return redirect("home")
 # Create your views here.
