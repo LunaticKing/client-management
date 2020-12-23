@@ -13,6 +13,7 @@
             <th>Sobrenome</th>
             <th>Idade</th>
             <th>Salário</th>
+            <p>Clique no ID do cliente para editar suas informações.</p>
         {%for client in clients %}
             <tr>
                 <td><a href="{% url 'people_update' client.id%}"><button class="btn btn-outline-primary">{{client.id}}</button></a></td>
