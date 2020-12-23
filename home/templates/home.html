@@ -3,7 +3,7 @@
 {%block title%}Página Inicial{%endblock%}
 
 {%block main%}
-    <h1>Seja Bem-Vinde!</h1>
+    <h1>Seja Bem-Vindo!</h1>
     {% if user.is_authenticated %}
         <p>Olá, {{user.username}}</p>
         <a href="{%url 'people_list'%}"><button class="btn btn-primary">Lista de Clientes</button></a>
