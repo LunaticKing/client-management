@@ -1,18 +1,27 @@
-<!doctype html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h2>Login</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit">Enviar</button>
-    </form>
-</body>
-</html>
+{%extends 'base.html'%}
+
+{%load bootstrap%}
+
+{%block title%}Login{%endblock%}
+
+{%block main%}
+<h2>Login</h2>
+<div class="row">
+    <div class="col-md">
+    </div>
+    <div class="col-md">
+        <form method="post">
+            {% csrf_token %}
+            {{form|bootstrap}}
+            <br>
+            <button type="submit" class="btn btn-success">Enviar</button><br>
+        </form>
+    </div>
+    <div class="col-md">
+    </div>
+</div>
+<br>
+<a href="{% url 'home' %}"><button class="btn btn-primary">Voltar</button></a>
+
+
+{%endblock%}

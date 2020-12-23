@@ -1,38 +1,35 @@
-<!doctype html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {%load static%}
-    <link rel="stylesheet" href='{% static "style.css" %}'>
-    <title>Document</title>
-</head>
-<body>
-     <table>
-         <th>ID</th>
-         <th>Nome</th>
-         <th>Sobrenome</th>
-         <th>Idade</th>
-         <th>Salário</th>
+{%extends 'base.html'%}
 
-         {%for client in clients %}
+{%block title%}Listagem{%endblock%}
+
+{%block main%}
+<h2 class="text-center">Lista de clientes</h2>
+    <table class="table table-striped table-hover table-bordered">
+        {% if not clients%}
+            <p class="text-center table align-middle">Não há registros nessa tabela</p>
+        {%else%}
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>Idade</th>
+            <th>Salário</th>
+        {%for client in clients %}
             <tr>
-                <td><a href="{% url 'people_update' client.id%}"><button>{{client.id}}</button></a></td>
+                <td><a href="{% url 'people_update' client.id%}"><button class="btn btn-outline-primary">{{client.id}}</button></a></td>
                 <td>{{client.name}}</td>
                 <td>{{client.surname}}</td>
                 <td>{{client.age}}</td>
-                <td>{{client.salary}}</td>
-                <td><a href="{% url 'people_delete' client.id%}"><button>Deletar</button></a></td>
+                <td>R${{client.salary}}</td>
+                <td><a href="{% url 'people_delete' client.id%}"><button class="btn btn-outline-danger">Deletar</button></a></td>
             </tr>
-         {%empty%}
-            <p>Não há registros nessa tabela</p>
          {% endfor %}
+        {% endif %}
     </table>
      <br>
-     <a href="{% url 'people_new' %}"><button>Cadastrar Novo Cliente</button></a>
-     <a href="{% url 'home' %}"><button>Página Inicial</button></a>
-     <a href="{% url 'logout' %}"><button>Sair</button></a>
-</body>
-</html>
+<div class="text-center d-grid gap-2 d-md-block">
+    <a href="{% url 'people_new' %}"><button class="btn btn-primary align-top">Cadastrar Novo Cliente</button></a>
+    <a href="{% url 'home' %}"><button class="btn btn-secondary">Página Inicial</button></a>
+    <a href="{% url 'logout' %}"><button class="btn btn-danger">Sair</button></a>
+</div>
+
+{%endblock%}

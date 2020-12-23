@@ -1,20 +1,14 @@
-<!doctype html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+{%extends 'base.html'%}
+
+{%block title%}Página Inicial{%endblock%}
+
+{%block main%}
     <h1>Seja Bem-Vinde!</h1>
     {% if user.is_authenticated %}
         <p>Olá, {{user.username}}</p>
-        <a href="{%url 'people_list'%}"><button>Lista de Clientes</button></a>
-        <a href="{%url 'logout'%}"><button>Sair</button></a>
+        <a href="{%url 'people_list'%}"><button class="btn btn-primary">Lista de Clientes</button></a>
+        <a href="{%url 'logout'%}"><button class="btn btn-danger">Sair</button></a>
     {% else %}
-        <a href="{%url 'login'%}"><button>Entrar</button></a>
+        <a href="{%url 'login'%}"><button class="btn btn-primary">Entrar</button></a>
     {% endif %}
-</body>
-</html>
+{%endblock%}
