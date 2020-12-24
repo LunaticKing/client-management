@@ -1,25 +1,50 @@
-{%extends 'base.html'%}
-
-{%load bootstrap%}
-
-{%block title%}Login{%endblock%}
-
-{%block main%}
-<h2>Login</h2>
-<div class="row">
-    <div class="col-md">
-    </div>
-    <div class="col-md">
-        <form method="post">
-            {% csrf_token %}
-            {{form|bootstrap}}
-            <br>
-            <button type="submit" class="btn btn-success">Enviar</button><br>
-        </form>
-    </div>
-    <div class="col-md">
-    </div>
+<!doctype html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Document</title>
+    {%load bootstrap%}
+</head>
+<body>
+<div class="row text-center">
+    <div class="col-md"></div>
+    <div class="col-md"><h2>Login</h2></div>
+    <div class="col-md"></div>
 </div>
-<br>
-<a href="{% url 'home' %}"><button class="btn btn-primary">Voltar</button></a>
-{%endblock%}
+
+    <div class="row">
+        <div class="col-md">
+        </div>
+        <div class="col-md">
+            <form method="post">
+                {% csrf_token %}
+                {{form|bootstrap}}
+                <br>
+        </div>
+        <div class="col-md">
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-md"></div>
+        <div class="col-md"><button type="submit" class="btn btn-success">Enviar</button></form></div>
+        <div class="col-md"></div>
+    </div>
+<div class="row">
+    <div class="col-md"></div>
+    <div class="col-md"><br></div>
+    <div class="col-md"></div>
+</div>
+    <div class="row text-center">
+        <div class="col-md"></div>
+        <div class="col-md"><a href="{% url 'home' %}"><button class="btn btn-primary">Voltar</button></a></div>
+        <div class="col-md"></div>
+    </div>
+    <br>
+
+</body>
+</html>
+
