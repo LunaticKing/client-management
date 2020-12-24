@@ -135,4 +135,4 @@ LOGIN_URL = "/login/"
 
 LOGIN_REDIRECT_URL = "people_list"
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
