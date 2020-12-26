@@ -31,10 +31,10 @@
         {%for client in clients %}
             <tr>
                 <td><a href="{% url 'people_update' client.id%}"><button class="btn btn-outline-primary">{{client.id}}</button></a></td>
-                <td>{{client.name}}</td>
-                <td>{{client.surname}}</td>
-                <td>{{client.age}}</td>
-                <td>R${{client.salary}}</td>
+                <td>{{client.nome}}</td>
+                <td>{{client.sobrenome}}</td>
+                <td>{{client.idade}}</td>
+                <td>R${{client.salário}}</td>
                 <td><a href="{% url 'people_delete' client.id%}"><button class="btn btn-outline-danger">Deletar</button></a></td>
             </tr>
          {% endfor %}
