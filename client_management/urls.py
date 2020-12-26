@@ -19,6 +19,7 @@ from home import urls as home_urls
 from django.contrib.auth import views as auth_views
 from clients import urls as client_urls
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('client/', include(client_urls)),
