@@ -135,8 +135,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "live-static", "media-root")
 
 LOGIN_URL = "/login/"
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
+
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 LOGIN_REDIRECT_URL = "home"
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
