@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container text-center">
-        <h3>Tem certeza que deseja deletar {{client.name}} {{client.surname}}?</h3>
+        <h3>Tem certeza que deseja deletar {{client.nome}} {{client.sobrenome}}?</h3>
         <form method="POST" enctype="multipart/form-data">
             {%csrf_token%}
             <button type="submit" class="btn btn-danger">Deletar</button>
