@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "clients",
     "home",
     "bootstrapform",
+    "storages",
 ]
 
 MIDDLEWARE = [
