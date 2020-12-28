@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "clients",
     "home",
     "bootstrapform",
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -122,12 +123,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+
+
 STATIC_URL = '/static/'
-
-STATICFILES_DIRS = [
-    "static",
-]
-
 
 MEDIA_URL = "/media/"
 
@@ -141,4 +139,11 @@ COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
 
 LOGIN_REDIRECT_URL = "home"
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'statics'),
+    # Extra lookup directories for collectstatic to find static files
+)
