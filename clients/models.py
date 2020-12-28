@@ -9,4 +9,4 @@ class Client(models.Model):
     foto = models.ImageField(null = True, blank = True)
 
     def __str__(self):
-        return self.name +" "+self.surname
+        return self.nome +" "+self.sobrenome
