@@ -134,15 +134,15 @@ LOGIN_URL = "/login/"
 
 COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 LOGIN_REDIRECT_URL = "home"
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
-
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'statics'),
+#
+# STATICFILES_DIRS = (
+#     os.path.join(PROJECT_ROOT, 'statics'),
     # Extra lookup directories for collectstatic to find static files
-)
+# )
