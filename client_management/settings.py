@@ -134,7 +134,7 @@ LOGIN_URL = "/login/"
 
 COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 LOGIN_REDIRECT_URL = "home"
 
