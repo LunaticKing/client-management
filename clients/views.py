@@ -9,7 +9,7 @@ def people_list(request):
     return render(request, "human.html", {"clients": clients})
 
 @login_required
-def people_new(request):
+def people_new(request): #Create
     form = ClientForm(request.POST or None, request.FILES or None)
 
     if form.is_valid():
@@ -18,7 +18,7 @@ def people_new(request):
     return render(request, "peopleform.html", {"form": form})
 
 @login_required
-def people_update(request, id):
+def people_update(request, id): #Update
     client = get_object_or_404(Client, pk = id)
     form = ClientForm(request.POST or None, request.FILES or None, instance = client)
 

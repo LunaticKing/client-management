@@ -26,14 +26,16 @@
             <th>Nome</th>
             <th>Sobrenome</th>
             <th>Idade</th>
+            <th>Foto</th>
             <th>Salário</th>
-            <h2>Clique no ID do cliente para editar suas informações.</h2>
+        <h2>Clique no ID do cliente para editar suas informações.</h2>
         {%for client in clients %}
             <tr>
                 <td><a href="{% url 'people_update' client.id%}"><button class="btn btn-outline-primary">{{client.id}}</button></a></td>
                 <td>{{client.nome}}</td>
                 <td>{{client.sobrenome}}</td>
                 <td>{{client.idade}}</td>
+                <td><a href="https://clientcontrol.s3.amazonaws.com/static/{{client.foto}}"><img width="50px" class="rounded-circle"  src="https://clientcontrol.s3.amazonaws.com/static/{{client.foto}}" alt="Cliente Sem Foto"></a></td>
                 <td>R${{client.salário}}</td>
                 <td><a href="{% url 'people_delete' client.id%}"><button class="btn btn-outline-danger">Deletar</button></a></td>
             </tr>
